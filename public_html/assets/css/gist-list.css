@@ -1,0 +1,53 @@
+body {
+    background-color: #1f1f1f;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #fff;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+table {}
+table tr {
+    background-color: #1f1f1f !important;
+}
+table th {
+    text-align: left;
+}
+#DataTables_Table_0_filter {
+    float: none;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#DataTables_Table_0_filter label {
+    font-size: 0;
+}
+#DataTables_Table_0_filter input {
+    padding: 5px 10px;
+    font-size: 24px;
+    text-align: center;
+    border: 0;
+    background-color: #ffc016;
+    color: #1f1f1f;
+}
+#DataTables_Table_0_filter input::placeholder {
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #ffc016;
+}
+table.dataTable thead th,
+table.dataTable thead td { border-bottom: 1px solid #ffc016; }
+#DataTables_Table_0_info {
+    color: #aaa;
+}
+

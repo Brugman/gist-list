@@ -4,6 +4,8 @@ include 'config.php';
 
 include 'functions.php';
 
+include 'core-head.php';
+
 $gists = get_all_gists();
 
 // if it doesnt exist create the file
@@ -16,18 +18,28 @@ fwrite( $wtf_fh_w, json_encode( $gists ) );
 // close filehandler
 fclose( $wtf_fh_w );
 
-echo 'Local Gists DB updated.';
-
 ?>
 <style>
 body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: #222;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    text-align: center;
     font-family: Arial;
     font-size: 18px;
-}
-td {
-    padding: 5px 10px;
+    color: #fff;
 }
 </style>
+
+<p>Local Gists DB updated.</p>
+
+<?php
+
+include 'core-foot.php';
 

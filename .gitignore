@@ -1,2 +1,6 @@
-public_html/config.php
-public_html/*.json
+**/*.map
+node_modules
+app/config.php
+app/db/*.json
+*.sublime-*
+*.code-*

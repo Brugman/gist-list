@@ -1,4 +1,4 @@
 <?php
 
-include 'load.php';
+include '../app/read.php';
 
