@@ -74,7 +74,7 @@ endif; // $gists
 </div><!-- container -->
 
 <script src="/assets/vendor/jquery-3.3.1/jquery.min.js"></script>
-<script src="/assets/vendor/datatables-1.10.19/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatables-1.10.19/js/jquery.dataTables.min.js"></script>
 
 <script>
 (function($) {
