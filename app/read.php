@@ -1,5 +1,8 @@
 <?php
 
+if ( !file_exists( dirname( __FILE__ ).'/config.php' ) )
+    exit('You don\'t have a config.php yet. Make a copy of config-example.php and configure it.');
+
 include 'config.php';
 
 include 'functions.php';
