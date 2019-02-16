@@ -66,7 +66,8 @@ else: // $gists
 
 ?>
 
-    <p>Gist List empty.</p>
+    <p>Your local Gist List database is empty.</p>
+    <p>If you have gists on your account, remember to visit <a href="/update/">/update</a> to update your local database.</p>
 
 <?php
 

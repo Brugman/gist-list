@@ -40,7 +40,8 @@ p {
 }
 </style>
 
-<p>Local Gists DB updated.</p>
+<p>Local Gist DB updated.</p>
+<p>Go <a href="/">back</a> to the app.</p>
 
 <?php
 
