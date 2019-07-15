@@ -1,12 +1,13 @@
 body {
     background-color: #1f1f1f;
+    margin: 0;
     padding-top: 100px;
     padding-bottom: 50px;
     font-family: Arial;
     font-size: 18px;
     color: #fff;
 }
-a {
+.dataTable a {
     color: #fff;
     text-decoration: none;
     border-bottom: 1px dotted #fff;
@@ -51,3 +52,43 @@ table.dataTable thead td { border-bottom: 1px solid #ffc016; }
     color: #aaa;
 }
 
+
+
+
+
+
+@keyframes rotating {
+    0% { transform: rotate( 0 ); }
+    100% { transform: rotate( 360deg ); }
+}
+
+.update {
+    margin-top: 15px;
+}
+.update a {
+    text-decoration: none;
+    color: #aaa;
+}
+.update a:hover {
+    color: #fff;
+}
+.update .icon {
+}
+.update .text {
+    margin-left: 10px;
+}
+.update svg {
+    width: 20px;
+    position: relative;
+    top: 3px;
+}
+.update .icon-reload svg {
+    color: #00a8ff;
+}
+.update .icon-spinner svg {
+    color: #ffc016;
+    animation: rotating 1.2s linear infinite;
+}
+.update .icon-check svg {
+    color: #4cd137;
+}

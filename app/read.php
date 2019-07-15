@@ -67,13 +67,18 @@ else: // $gists
 ?>
 
     <p>Your local Gist List database is empty.</p>
-    <p>If you have gists on your account, remember to visit <a href="/update/">/update</a> to update your local database.</p>
 
 <?php
 
 endif; // $gists
 
 ?>
+
+    <div class="update">
+        <div class="icon icon-reload js-us-neutral"><a href="#" class="js-update" title="Update Gist List"><?=file_get_contents('../public_html/assets/images/sync-alt-solid.svg');?><span class="text">Update Gist List</span></a></div>
+        <div class="icon icon-spinner js-us-loading" style="display: none;"><?=file_get_contents('../public_html/assets/images/spinner-regular.svg');?></div>
+        <div class="icon icon-check js-us-success" style="display: none;"><?=file_get_contents('../public_html/assets/images/check-solid.svg');?><span class="text">Done. Reloading...</span></a></div>
+    </div>
 
 </div><!-- container -->
 
@@ -82,6 +87,25 @@ endif; // $gists
 
 <script>
 (function($) {
+
+    $('.js-update').on( 'click', function ( event ) {
+        // prevent default
+        event.stopPropagation();
+        event.preventDefault();
+        // show loading
+        $('.js-us-neutral').hide();
+        $('.js-us-loading').show();
+        // make the call
+        $.ajax({
+            url: '/update',
+        }).done( function( return_data ) {
+            // console.log( 'return_data:' );
+            // console.log( return_data );
+            $('.js-us-loading').hide();
+            $('.js-us-success').show();
+            setTimeout( location.reload.bind( location ), 3000 );
+        });
+    });
 
     var datatable = $( '.js-datatable' ).DataTable({
         'order': [[ 3, 'desc' ]],
