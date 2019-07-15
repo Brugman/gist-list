@@ -7,8 +7,6 @@ include 'config.php';
 
 include 'functions.php';
 
-include 'core-head.php';
-
 $gists = get_all_gists();
 
 // if it doesnt exist create the file
@@ -21,29 +19,7 @@ fwrite( $wtf_fh_w, json_encode( $gists ) );
 // close filehandler
 fclose( $wtf_fh_w );
 
-?>
-<style>
-body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-p {
-    text-align: center;
-    font-family: Arial;
-    font-size: 18px;
-    color: #fff;
-}
-</style>
-
-<p>Local Gist DB updated.</p>
-<p>Go <a href="/">back</a> to the app.</p>
-
-<?php
-
-include 'core-foot.php';
+header( 'Content-Type: application/json; charset=UTF-8' );
+echo json_encode( 1 );
+exit;
 
