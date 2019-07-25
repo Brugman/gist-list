@@ -36,7 +36,7 @@ table th {
     font-size: 24px;
     text-align: center;
     border: 0;
-    background-color: #ffc016;
+    background-color: #FFCE2D;
     color: #1f1f1f;
 }
 #DataTables_Table_0_filter input::placeholder {
@@ -44,10 +44,10 @@ table th {
     opacity: 0.3;
 }
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
-    border-bottom: 1px solid #ffc016;
+    border-bottom: 1px solid #FFCE2D;
 }
 table.dataTable thead th,
-table.dataTable thead td { border-bottom: 1px solid #ffc016; }
+table.dataTable thead td { border-bottom: 1px solid #FFCE2D; }
 #DataTables_Table_0_info {
     color: #aaa;
 }
@@ -86,7 +86,7 @@ table.dataTable thead td { border-bottom: 1px solid #ffc016; }
     color: #00a8ff;
 }
 .update .icon-spinner svg {
-    color: #ffc016;
+    color: #FFCE2D;
     animation: rotating 1.2s linear infinite;
 }
 .update .icon-check svg {
