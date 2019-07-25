@@ -1,4 +1,5 @@
 **/*.map
+docs
 node_modules
 app/config.php
 app/db/*.json
