@@ -7,11 +7,33 @@ include 'config.php';
 
 include 'functions.php';
 
-include 'core-head.php';
-
 ?>
+<!DOCTYPE html>
+<html>
+<head>
 
-<div class="container">
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- title -->
+    <title>Gist List</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/vendor/datatables-1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/vendor/datatables-responsive-2.2.3/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/css/gist-list.css">
+
+</head>
+<body>
 
 <?php
 
@@ -23,19 +45,19 @@ if ( isset( $gists ) && !empty( $gists ) ):
 
 ?>
 
-    <table class="js-datatable">
+<table class="js-datatable">
 
-        <thead>
-            <tr>
-                <th>Language</th>
-                <th>Gist</th>
-                <th>Public</th>
-                <th>Created</th>
-                <th>Updated</th>
-            </tr>
-        </thead>
+    <thead>
+        <tr>
+            <th data-priority="2">Language</th>
+            <th data-priority="1">Gist</th>
+            <th>Public</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+    </thead>
 
-        <tbody>
+    <tbody>
 
 <?php
 
@@ -43,13 +65,13 @@ foreach ( $gists as $gist ):
 
 ?>
 
-    <tr>
-        <td data-order="<?=( $gist['filelang'] ?: 'ZZZZZ' );?>"><?=$gist['filelang'];?></td>
-        <td><a href="<?=$gist['url'];?>" target="_blank"><?=$gist['filename'];?></a></td>
-        <td><?=( $gist['public'] ? 'Yes' : '' );?></td>
-        <td data-order="<?=$gist['created_at'];?>"><?=format_date( $gist['created_at'] );?></td>
-        <td data-order="<?=$gist['updated_at'];?>"><?=format_date( $gist['updated_at'] );?></td>
-    </tr>
+        <tr>
+            <td data-order="<?=( $gist['filelang'] ?: 'ZZZZZ' );?>"><?=$gist['filelang'];?></td>
+            <td><a href="<?=$gist['url'];?>" target="_blank"><?=$gist['filename'];?></a></td>
+            <td><?=( $gist['public'] ? 'Yes' : '' );?></td>
+            <td data-order="<?=$gist['created_at'];?>"><?=format_date( $gist['created_at'] );?></td>
+            <td data-order="<?=$gist['updated_at'];?>"><?=format_date( $gist['updated_at'] );?></td>
+        </tr>
 
 <?php
 
@@ -57,8 +79,9 @@ endforeach; // $gists
 
 ?>
 
-        </tbody>
-    </table>
+    </tbody>
+
+</table>
 
 <?php
 
@@ -66,7 +89,7 @@ else: // $gists
 
 ?>
 
-    <p>Your local Gist List database is empty.</p>
+<p>Your local Gist List database is empty.</p>
 
 <?php
 
@@ -74,16 +97,15 @@ endif; // $gists
 
 ?>
 
-    <div class="update">
-        <div class="icon icon-reload js-us-neutral"><a href="#" class="js-update" title="Update Gist List"><?=file_get_contents('../public_html/assets/images/sync-alt-solid.svg');?><span class="text">Update Gist List</span></a></div>
-        <div class="icon icon-spinner js-us-loading" style="display: none;"><?=file_get_contents('../public_html/assets/images/spinner-regular.svg');?></div>
-        <div class="icon icon-check js-us-success" style="display: none;"><?=file_get_contents('../public_html/assets/images/check-solid.svg');?><span class="text">Done. Reloading...</span></a></div>
-    </div>
-
-</div><!-- container -->
+<div class="update">
+    <div class="icon icon-reload js-us-neutral"><a href="#" class="js-update" title="Update Gist List"><?=file_get_contents('../public_html/assets/images/sync-alt-solid.svg');?><span class="text">Update Gist List</span></a></div>
+    <div class="icon icon-spinner js-us-loading" style="display: none;"><?=file_get_contents('../public_html/assets/images/spinner-regular.svg');?></div>
+    <div class="icon icon-check js-us-success" style="display: none;"><?=file_get_contents('../public_html/assets/images/check-solid.svg');?><span class="text">Done. Reloading...</span></a></div>
+</div>
 
 <script src="/assets/vendor/jquery-3.3.1/jquery.min.js"></script>
 <script src="/assets/vendor/datatables-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatables-responsive-2.2.3/dataTables.responsive.min.js"></script>
 
 <script>
 (function($) {
@@ -99,8 +121,6 @@ endif; // $gists
         $.ajax({
             url: '/update',
         }).done( function( return_data ) {
-            // console.log( 'return_data:' );
-            // console.log( return_data );
             $('.js-us-loading').hide();
             $('.js-us-success').show();
             setTimeout( location.reload.bind( location ), 3000 );
@@ -108,12 +128,17 @@ endif; // $gists
     });
 
     var datatable = $( '.js-datatable' ).DataTable({
-        'order': [[ 3, 'desc' ]],
-        'paging': false,
-        'scrollY': '50vh',
+        'order': [[ 1, 'asc' ]],
         'stateSave': true,
-        language: {
-            searchPlaceholder: 'Search'
+        'responsive': {
+            'details': {
+                'type': false
+            },
+        },
+        'scrollY': 'calc( 100vh - 300px )',
+        'paging': false,
+        'language': {
+            'searchPlaceholder': 'Search'
         },
     });
 
@@ -145,7 +170,5 @@ endif; // $_GET['q']
 })( jQuery );
 </script>
 
-<?php
-
-include 'core-foot.php';
-
+</body>
+</html>
