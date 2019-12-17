@@ -2,7 +2,7 @@
 
 Gist List let's you store your Gist metadata locally, and fuzzy search the file names in a DataTable UI.
 
-You can host this on a private location to let people browse your secret Gists, without giving them your account.
+You could also host this on a private location to let people browse your secret Gists, without giving them access to your account.
 
 ![screenshot](https://raw.githubusercontent.com/Brugman/gist-list/develop/screenshot.png)
 
@@ -31,3 +31,11 @@ Gist List was made when GistBox went freemium and rebranded to Cacher. The free 
 ### Why are Gist file names used instead of descriptions?
 
 GistBox used file name search. So our dev team built up a Gist library with descriptive file names. If you want a description-powered Gist List feel free to request this in an issue, or fork the code.
+
+## Contributing
+
+If there's anything you'd like to see added or changed, please open an issue so we can talk about it. Forking is cool too.
+
+## License
+
+[MIT](/LICENSE) &copy; [Tim Brugman](https://timbr.dev/)
