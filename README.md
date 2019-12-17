@@ -4,7 +4,7 @@ Gist List let's you store your Gist metadata locally, and fuzzy search the file 
 
 You could also host this on a private location to let people browse your secret Gists, without giving them access to your account.
 
-![screenshot](https://raw.githubusercontent.com/Brugman/gist-list/develop/screenshot.png)
+![screenshot](/screenshot.png)
 
 ## Firefox keyword search
 
