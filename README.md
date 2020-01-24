@@ -26,8 +26,8 @@ No idea. I personally love Sublime Text too much, but you do you.
 
 ### Why was Gist List made?
 
-Gist List was made when GistBox went freemium and rebranded to Cacher. The free plan was insufficient for our team, and the paid plan too expensive for our basic needs.
+Gist List was made when GistBox went freemium and rebranded to Cacher. The free plan was insufficient for our team, and the paid plan overkill for our basic needs.
 
 ### Why are Gist file names used instead of descriptions?
 
-GistBox used file name search. So our dev team built up a Gist library with descriptive file names. If you want a description-powered Gist List feel free to request this in an issue, or fork the code.
+GistBox used file name search. So our agency's developers built up a Gist library with descriptive file names. If you want a description-powered Gist List feel free to request this in an issue, or fork the code.
