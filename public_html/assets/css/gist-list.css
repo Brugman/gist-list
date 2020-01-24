@@ -15,6 +15,10 @@ body {
         padding: 50px 50px 0 50px;
     }
 }
+.js-datatable:not(.dataTable),
+.js-datatable:not(.dataTable) + .update {
+    display: none;
+}
 table.dataTable thead th, table.dataTable thead td {
     padding: 10px 15px 10px 0;
 }
