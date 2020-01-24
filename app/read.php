@@ -110,22 +110,9 @@ endif; // $gists
 <script>
 (function($) {
 
-    $('.js-update').on( 'click', function ( event ) {
-        // prevent default
-        event.stopPropagation();
-        event.preventDefault();
-        // show loading
-        $('.js-us-neutral').hide();
-        $('.js-us-loading').show();
-        // make the call
-        $.ajax({
-            url: '/update',
-        }).done( function( return_data ) {
-            $('.js-us-loading').hide();
-            $('.js-us-success').show();
-            setTimeout( location.reload.bind( location ), 3000 );
-        });
-    });
+    /**
+     * On load: Datatable.
+     */
 
     var datatable = $( '.js-datatable' ).DataTable({
         'order': [[ 1, 'asc' ]],
@@ -144,28 +131,63 @@ endif; // $gists
 
 <?php
 
-if ( isset( $_GET['q'] ) && !empty( $_GET['q'] ) ):
-
-$query = trim( $_GET['q'] );
-
+if ( isset( $_GET['q'] ) && !empty( $_GET['q'] ) )
+{
+    $query = trim( $_GET['q'] );
 ?>
+
+    /**
+     * On load: Search datatable for query.
+     */
 
     $( '#DataTables_Table_0_filter input' ).val( '<?=$query;?>' ).focus();
     datatable.search( '<?=$query;?>' ).draw();
 
 <?php
-
-else: // $_GET['q']
-
+}
+else
+{
 ?>
+
+    /**
+     * On load: Focus search field.
+     */
 
     $( '#DataTables_Table_0_filter input' ).focus().select();
 
 <?php
-
-endif; // $_GET['q']
+}
 
 ?>
+
+    /**
+     * On click: Focus search field.
+     */
+
+    $( 'a' ).on( 'click', function ( event ) {
+        $( '#DataTables_Table_0_filter input' ).focus().select();
+    });
+
+    /**
+     * On click: Update gist db.
+     */
+
+    $('.js-update').on( 'click', function ( event ) {
+        // prevent default
+        event.stopPropagation();
+        event.preventDefault();
+        // show loading
+        $('.js-us-neutral').hide();
+        $('.js-us-loading').show();
+        // make the call
+        $.ajax({
+            url: '/update',
+        }).done( function( return_data ) {
+            $('.js-us-loading').hide();
+            $('.js-us-success').show();
+            setTimeout( location.reload.bind( location ), 3000 );
+        });
+    });
 
 })( jQuery );
 </script>
