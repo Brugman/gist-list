@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
 body {
-    background-color: #1f1f1f;
+    background-color: #202020;
     margin: 0;
-    font-family: Arial;
+    font-family: 'Rubik', sans-serif;
     font-size: 18px;
     color: #fff;
 }
@@ -12,8 +14,12 @@ body {
 }
 @media screen and ( min-width: 768px ) {
     body {
-        padding: 50px 50px 0 50px;
+        padding: 30px 30px 0 30px;
     }
+}
+::selection {
+    background-color: #FFCE2D;
+    color: #202020;
 }
 .js-datatable:not(.dataTable),
 .js-datatable:not(.dataTable) + .update {
@@ -37,10 +43,11 @@ table.dataTable thead .sorting_asc {
     text-decoration: none;
 }
 table tr {
-    background-color: #1f1f1f !important;
+    background-color: #202020 !important;
 }
 table th {
     text-align: left;
+    font-weight: normal !important;
 }
 #DataTables_Table_0_filter {
     float: none;
@@ -50,21 +57,34 @@ table th {
 #DataTables_Table_0_filter label {
     font-size: 0;
 }
+#DataTables_Table_0_filter input::selection {
+    background-color: #202020;
+    color: #fff;
+}
 #DataTables_Table_0_filter input {
     min-width: auto;
     width: 100%;
     max-width: 270px;
+
     margin: 0 !important;
-    padding: 5px 10px;
-    font-size: 24px;
-    text-align: center;
+    padding: 10px 15px;
     border: 0;
-    background-color: #FFCE2D;
-    color: #1f1f1f;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #ffffff;
+
+    font-family: 'Viga', sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 #DataTables_Table_0_filter input::placeholder {
-    text-transform: uppercase;
-    opacity: 0.3;
+    opacity: 0.2;
+}
+#DataTables_Table_0_filter input:focus {
+    outline: 0;
 }
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
     border-bottom: 1px solid #FFCE2D;
