@@ -1,8 +1,7 @@
 # Gist List
 
-Gist List let's you store your Gist metadata locally, and fuzzy search the file names in a DataTable UI.
-
-You could also host this on a private location to let people browse your secret Gists, without giving them access to your account.
+> Gist List let's you store your Gist metadata locally, and fuzzy search the file names in a DataTable UI.
+> You can also host this on a private location to let people browse your secret Gists, without giving them access to your account.
 
 ![screenshot](/screenshot.png)
 
@@ -34,8 +33,10 @@ GistBox used file name search. So our agency's developers built up a Gist librar
 
 ## Contributing
 
-If there's anything you'd like to see added or changed, please open an issue so we can talk about it. Forking is cool too.
+Found a bug? Anything you would like to ask, add or change? Please open an issue so we can talk about it.
 
-## License
+Pull requests are welcome. Please try to match the current code formatting.
 
-[MIT](/LICENSE) &copy; [Tim Brugman](https://timbr.dev/)
+## Author
+
+[Tim Brugman](https://github.com/Brugman)
