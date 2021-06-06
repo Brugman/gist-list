@@ -36,9 +36,9 @@ var sourcemaps   = require( 'gulp-sourcemaps' );
 var argv         = require( 'minimist' )( process.argv.slice( 2 ) );
 var log          = require( 'fancy-log' );
 // js
-// var concat       = require( 'gulp-concat' );
-// var uglify       = require( 'gulp-uglify' );
-// var babel        = require( 'gulp-babel' );
+var concat       = require( 'gulp-concat' );
+var uglify       = require( 'gulp-uglify' );
+var babel        = require( 'gulp-babel' );
 // less
 var less         = require( 'gulp-less' );
 
@@ -194,7 +194,7 @@ gulp.task( 'watch', function () {
     // start livereload
     livereload.listen();
     // JavaScript
-    // gulp.watch( dir.input.js+'/app.js', gulp.parallel( 'js_app' ) );
+    gulp.watch( dir.input.js+'/app.js', gulp.parallel( 'js_app' ) );
     // Less
     gulp.watch( dir.input.less+'/**/*.less', gulp.parallel( 'less_app' ) );
     // PHP
@@ -211,7 +211,7 @@ gulp.task( 'watch', function () {
  * Task: Default.
  */
 gulp.task( 'default', gulp.parallel(
-    // 'js_app',
+    'js_app',
     'less_app'
 ));
 
