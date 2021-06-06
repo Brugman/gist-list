@@ -30,7 +30,7 @@ include 'functions.php';
     <!-- css -->
     <link rel="stylesheet" href="/assets/vendor/datatables-1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/assets/vendor/datatables-responsive-2.2.3/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="/assets/css/gist-list.css">
+    <link rel="stylesheet" href="/assets/app.min.css?v20210606">
 
 </head>
 <body>

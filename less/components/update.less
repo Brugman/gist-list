@@ -1,0 +1,37 @@
+@keyframes rotating {
+    0% { transform: rotate( 0 ); }
+    100% { transform: rotate( 360deg ); }
+}
+.update {
+    a {
+        text-decoration: none;
+        color: @color-grey-2;
+        &:hover {
+            color: @color-white;
+        }
+    }
+    .text {
+        margin-left: 10px;
+    }
+    svg {
+        width: 20px;
+        position: relative;
+        top: 3px;
+    }
+    .icon-reload svg {
+        color: @color-blue;
+    }
+    .icon-spinner svg {
+        color: @color-accent;
+        animation: rotating 1.2s linear infinite;
+    }
+    .icon-check svg {
+        color: @color-green;
+    }
+}
+
+.js-datatable:not(.dataTable),
+.js-datatable:not(.dataTable) + .update {
+    display: none;
+}
+

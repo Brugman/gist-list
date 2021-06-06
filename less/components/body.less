@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    background-color: @color-black;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    color: @color-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    @media @bp-xs-md {
+        padding: 15px;
+    }
+    @media @bp-md-up {
+        padding: 30px;
+    }
+}
+
+::selection {
+    background-color: @color-accent;
+    color: @color-black;
+}
+
