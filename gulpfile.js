@@ -1,8 +1,8 @@
 /**
- * Gulp 4 gulpfile template.
+ * timbr.dev Gulp template.
  *
- * Template last updated: 2021-05-13.
- * File last updated:     2021-06-06.
+ * Template last updated: 2021-06-17.
+ * File last updated:     2021-06-17.
  */
 
 /**
