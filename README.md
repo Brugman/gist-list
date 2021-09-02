@@ -74,7 +74,7 @@ Pull requests are welcome. Please try to match the current code formatting.
 
 ### Development installation
 
-1. Perforf the regular installation first.
+1. Perform the regular installation & configuration.
 1. `npm i`
 
 ### Build tools
