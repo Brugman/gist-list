@@ -5,7 +5,38 @@
 
 ![screenshot](/screenshot.png)
 
-## Firefox keyword search
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Required configuration](#required-configuration)
+- [Tips](#tips)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [Author](#author)
+
+## Requirements
+
+- Apache (any webserver)
+- PHP
+
+## Installation
+
+1. Map `public_html` to a (sub)domain.
+
+## Required configuration
+
+- Copy `app/config-example.php` to `app/config.php`.
+- Configure `app/config.php` with:
+    + Your GitHub username.
+    + A [GitHub personal access token](https://github.com/settings/tokens).
+    + A random string.
+- Visit the (sub)domain.
+- Click the update button.
+
+## Tips
+
+### Firefox keyword search
 
 By appending `/?q=KEYWORD` you can leverage Firefox's keyword feature on bookmarks to instantly search your Gist List from the url bar. For example: `gist flexbox`.
 
@@ -36,6 +67,22 @@ GistBox used file name search. So our agency's developers built up a Gist librar
 Found a bug? Anything you would like to ask, add or change? Please open an issue so we can talk about it.
 
 Pull requests are welcome. Please try to match the current code formatting.
+
+### Development requirements
+
+- npm
+
+### Development installation
+
+1. Perforf the regular installation first.
+1. `npm i`
+
+### Build tools
+
+Command | Minification | Sourcemaps
+:--- |:--- |:---
+`gulp` | :heavy_minus_sign: | :heavy_check_mark:
+`gulp --env=prod` | :heavy_check_mark: | :heavy_minus_sign:
 
 ## Author
 
