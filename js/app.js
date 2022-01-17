@@ -27,7 +27,9 @@
          * On load: Search datatable for query.
          */
 
+        // place query in search box and give focus
         $( '#DataTables_Table_0_filter input' ).val( query ).focus();
+        // reload datatable
         datatable.search( query ).draw();
     }
     else
@@ -36,7 +38,10 @@
          * On load: Focus search field.
          */
 
+        // give focus
         $( '#DataTables_Table_0_filter input' ).focus().select();
+        // clear query string
+        window.location.search = '';
     }
 
     /**
