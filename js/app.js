@@ -41,7 +41,7 @@
         // give focus
         $( '#DataTables_Table_0_filter input' ).focus().select();
         // clear query string
-        window.location.search = '';
+        window.history.replaceState( {}, document.title, '/' );
     }
 
     /**
