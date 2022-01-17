@@ -19,7 +19,7 @@
         },
     });
 
-    var query = window.location.search.substring( 3 );
+    var query = window.location.search.substring( 3 ).replace( /%20/g, ' ' );
 
     if ( query != '' )
     {
