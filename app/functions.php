@@ -25,7 +25,8 @@ function get_gists_page( $page = false )
 
     curl_setopt_array( $ch, $options );
     $items = curl_exec( $ch );
-    $items = json_decode( $items );
+    $items = json_decode( $items, true );
+
     return $items;
 }
 
@@ -58,7 +59,7 @@ function get_gists_local()
     // close filehandler
     fclose( $wtf_fh_r );
     // decode
-    $gists = json_decode( $gists );
+    $gists = json_decode( $gists, true );
 
     return $gists;
 }
@@ -70,13 +71,13 @@ function filter_usable_data( $old = [] )
     foreach ( $old as $item )
     {
         $new[] = [
-            'url'         => $item->html_url,
-            'filename'    => remove_extension( reset( $item->files )->filename ),
-            'filelang'    => reset( $item->files )->language,
-            'description' => $item->description,
-            'public'      => $item->public,
-            'created_at'  => $item->created_at,
-            'updated_at'  => $item->updated_at,
+            'url'         => $item['html_url'],
+            'filename'    => remove_extension( reset( $item['files'] )['filename'] ),
+            'filelang'    => reset( $item['files'] )['language'],
+            'description' => $item['description'],
+            'public'      => $item['public'],
+            'created_at'  => $item['created_at'],
+            'updated_at'  => $item['updated_at'],
         ];
     }
 
@@ -98,6 +99,7 @@ function remove_extension( $file = '' )
 function format_date( $string )
 {
     $timestamp = strtotime( $string );
+
     return date( 'Y-m-d', $timestamp );
 }
 
