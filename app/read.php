@@ -30,7 +30,7 @@ include 'functions.php';
     <!-- css -->
     <link rel="stylesheet" href="/assets/vendor/datatables-1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/assets/vendor/datatables-responsive-2.2.3/responsive.dataTables.min.css">
-    <link rel="stylesheet" href="/assets/app.min.css?v20210606">
+    <link rel="stylesheet" href="/assets/app.min.css?v20260610">
 
 </head>
 <body>
@@ -106,7 +106,7 @@ endif; // $gists
 <script src="/assets/vendor/jquery-3.3.1/jquery.min.js"></script>
 <script src="/assets/vendor/datatables-1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="/assets/vendor/datatables-responsive-2.2.3/dataTables.responsive.min.js"></script>
-<script src="/assets/app.min.js?v20210606"></script>
+<script src="/assets/app.min.js?v20260610"></script>
 
 </body>
 </html>
