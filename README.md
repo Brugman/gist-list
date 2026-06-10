@@ -70,19 +70,19 @@ Pull requests are welcome. Please try to match the current code formatting.
 
 ### Development requirements
 
-- npm
+- pnpm
 
 ### Development installation
 
 1. Perform the regular installation & configuration.
-1. `npm i`
+1. `pnpm i`
 
 ### Build tools
 
 Command | Minification | Sourcemaps
 :--- |:--- |:---
-`gulp` | :heavy_minus_sign: | :heavy_check_mark:
-`gulp --env=prod` | :heavy_check_mark: | :heavy_minus_sign:
+`pnpm build` | :heavy_check_mark: | :heavy_minus_sign:
+`pnpm watch` | :heavy_minus_sign: | :heavy_check_mark:
 
 ## Author
 
