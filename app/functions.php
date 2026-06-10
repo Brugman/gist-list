@@ -18,7 +18,6 @@ function get_gists_page( $page = false )
         CURLOPT_AUTOREFERER    => 1,
         CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)',
         CURLOPT_TIMEOUT        => 300,
-        CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_0,
         CURLOPT_IPRESOLVE      => CURL_IPRESOLVE_V4,
         CURLOPT_HTTPHEADER     => [ 'Authorization: Bearer '.$github_token ],
     ];
