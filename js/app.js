@@ -69,7 +69,7 @@
         }).done( function( return_data ) {
             $('.js-us-loading').hide();
             $('.js-us-success').show();
-            setTimeout( location.reload.bind( location ), 3000 );
+            setTimeout( location.reload.bind( location ), 300 );
         });
     });
 
